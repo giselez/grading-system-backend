@@ -1,6 +1,6 @@
 import express from "express"; // importing the module
 const app = express(); // creating an Express app
-const { PORT = 3000 } = process.env;
+const { PORT = 3030 } = process.env;
 import bodyParser from "body-parser";
 import cors from "cors";
 app.use(bodyParser.json()).use(cors());
