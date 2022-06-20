@@ -1,4 +1,4 @@
-const data = {
+const data = { 
     student: [
         {
             id: 1,
