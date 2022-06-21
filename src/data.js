@@ -43,7 +43,7 @@ const data = {
             faculty: 'Science'
         }
     ],
-    Marking:
+    markings:
         [
             {
                 id: 1,
