@@ -1,0 +1,159 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Student Grading System"
+  },
+  "basePath": "/api",
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "paths": {
+    "/teachers": {
+      "get": {
+        "summary": "Get all teachers",
+        "description": "Display the list of teachers",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "The list of teachers",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Teacher"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/students": {
+      "get": {
+        "summary": "Get all students",
+        "description": "Display the list of students",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "The list of students",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Student"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/teachers/{id}": {
+      "get": {
+        "summary": "Get single teacher",
+        "description": "Get teacher by id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "single teacher",
+            "schema": {
+              "$ref": "#/definitions/Teacher"
+            }
+          }
+        }
+      }
+    },
+    "/students/{id}": {
+      "get": {
+        "summary": "Get single student",
+        "description": "Get student by id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "single student",
+            "schema": {
+              "$ref": "#/definitions/Student"
+            }
+          }
+        }
+      }
+    },
+    "/markings": {
+      "get": {
+        "summary": "Get all markings",
+        "description": "Retrieves list of markings",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "The list of markings",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Marking"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Teacher": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "faculty": {
+          "type": "string"
+        }
+      }
+    },
+    "Student": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "faculty": {
+          "type": "string"
+        }
+      }
+    },
+    "Marking": {
+      "type": "object",
+      "properties": {
+        "teacherid": {
+          "type": "integer"
+        },
+        "studentid": {
+          "type": "integer"
+        },
+        "grade": {
+          "type": "integer"
+        },
+        "commentFromProf": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
