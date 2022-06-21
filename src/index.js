@@ -67,7 +67,7 @@ app.get("/api/markings", (req, res) => {
 
     if (studentid) {
         markings = markings.filter(
-            (marking) => marking.studentid == studentid
+            (marking) => marking.studentid == parseInt(studentid, 10)
         );
     }
 
