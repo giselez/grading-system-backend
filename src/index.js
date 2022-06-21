@@ -9,6 +9,7 @@ app.use(bodyParser.json()).use(cors());
 
 // All API endpoints are tested with Postman
 
+
 // ----------------------------- GET REQUESTS -----------------------------
 
 
@@ -128,6 +129,7 @@ app.post("/api/students", (req, res) => {
 
 // ----------------------------- HEALTHCHECK -----------------------------
 
+
 // A healthcheck endpoint which returns a healthcheck in json format
 app.get("/healthcheck", (req, res) => {
     let healthcheck = {
@@ -147,6 +149,7 @@ app.get("/healthcheck", (req, res) => {
 });
 
 // ----------------------------- LOCAL HOSTING -----------------------------
+
 
 app.listen(PORT, () => console.log(`I'm listening http://localhost:${PORT}/`));
 
